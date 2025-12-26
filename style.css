@@ -16,7 +16,7 @@
   src: url(TRYLisztFY-Book.ttf);
 }
 @font-face {
-  font-family: aeonik;
+  font-family: aeonik2;
   font-weight: 700;
   src: url(TRYLisztFY-Black.ttf);
 }
@@ -277,32 +277,80 @@ body {
   display: block;
   position: relative;
 }
-.main section.motivation-fullpage .motivation-container {
-  height: 400px;
-  width: 400px;
-  position: absolute;
-  border-radius: 50px;
-  background-color: var(--pri);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.main section.motivation-fullpage .motvation-fullpage-continer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.main section.motivation-fullpage .motivation-container .motivation-wrapper {
+.main section.motivation-fullpage .motvation-fullpage-continer .motivation-container {
+  height: 400px;
+  width: 80%;
+  position: relative;
+}
+.main section.motivation-fullpage .motvation-fullpage-continer .motivation-container .motivation-wrapper {
+  padding: 15px;
   z-index: 10;
   position: absolute;
   height: 100%;
-  width: 100%;
-  background-color: #fff;
-  border-radius: 40px;
+  background-color: var(--tri2);
+  border-radius: 30px;
+}
+.main section.motivation-fullpage .motvation-fullpage-continer .motivation-container .motivation-wrapper img {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  opacity: 0.4;
+  right: 5%;
+  top: 10%;
+}
+.main section.motivation-fullpage .motvation-fullpage-continer .motivation-container .motivation-wrapper .motivation-1 {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: #1B3C53;
+}
+.main section.motivation-fullpage .motvation-fullpage-continer .motivation-container .motivation-wrapper .motivation-1 h2 {
+  font-family: aeonik2;
+  font-size: 30px;
+  font-weight: 500;
+}
+.main section.motivation-fullpage .motvation-fullpage-continer .motivation-container .motivation-wrapper .motivation-2 {
+  margin-top: 15px;
+  padding: 10px;
+}
+.main section.motivation-fullpage .motvation-fullpage-continer .motivation-container .motivation-wrapper .motivation-2 h1 {
+  font-family: aeonik1;
+  font-size: 40px;
+  font-weight: 500;
+  color: var(--pri);
+}
+.main section.motivation-fullpage .motvation-fullpage-continer .motivation-container .motivation-wrapper .motivation-3 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+.main section.motivation-fullpage .motvation-fullpage-continer .motivation-container .motivation-wrapper .motivation-3 h2 {
+  padding: 30px;
+  border-radius: 20px;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #1B3C53;
+  font-size: 30px;
+  font-weight: 500;
+  text-align: right;
 }
 .main section.motivation-fullpage .motivation-container::after {
   content: "";
   height: 100%;
   width: 100%;
   position: absolute;
-  background-color: red;
+  background-color: rgba(207, 240, 240, 0.61);
   border-radius: 50px;
   scale: 1.15;
-  filter: blur(150);
+  filter: blur(100px);
   z-index: 8;
 }/*# sourceMappingURL=style.css.map */
