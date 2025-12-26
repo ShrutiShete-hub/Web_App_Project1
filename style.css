@@ -274,22 +274,17 @@ body {
   padding-top: 26px;
 }
 .main section.motivation-fullpage {
-  display: block;
   position: relative;
 }
-.main section.motivation-fullpage .motvation-fullpage-continer {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.main section.motivation-fullpage .motvation-fullpage-continer .motivation-container {
+.main section.motivation-fullpage .motivation-container {
   height: 400px;
   width: 80%;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.main section.motivation-fullpage .motvation-fullpage-continer .motivation-container .motivation-wrapper {
+.main section.motivation-fullpage .motivation-container .motivation-wrapper {
   padding: 15px;
   z-index: 10;
   position: absolute;
@@ -297,7 +292,7 @@ body {
   background-color: var(--tri2);
   border-radius: 30px;
 }
-.main section.motivation-fullpage .motvation-fullpage-continer .motivation-container .motivation-wrapper img {
+.main section.motivation-fullpage .motivation-container .motivation-wrapper img {
   position: absolute;
   width: 70px;
   height: 70px;
@@ -305,35 +300,35 @@ body {
   right: 5%;
   top: 10%;
 }
-.main section.motivation-fullpage .motvation-fullpage-continer .motivation-container .motivation-wrapper .motivation-1 {
+.main section.motivation-fullpage .motivation-container .motivation-wrapper .motivation-1 {
   width: -moz-fit-content;
   width: fit-content;
   padding: 30px;
   border-radius: 20px;
   background-color: #1B3C53;
 }
-.main section.motivation-fullpage .motvation-fullpage-continer .motivation-container .motivation-wrapper .motivation-1 h2 {
+.main section.motivation-fullpage .motivation-container .motivation-wrapper .motivation-1 h2 {
   font-family: aeonik2;
   font-size: 30px;
   font-weight: 500;
 }
-.main section.motivation-fullpage .motvation-fullpage-continer .motivation-container .motivation-wrapper .motivation-2 {
+.main section.motivation-fullpage .motivation-container .motivation-wrapper .motivation-2 {
   margin-top: 15px;
   padding: 10px;
 }
-.main section.motivation-fullpage .motvation-fullpage-continer .motivation-container .motivation-wrapper .motivation-2 h1 {
+.main section.motivation-fullpage .motivation-container .motivation-wrapper .motivation-2 h1 {
   font-family: aeonik1;
   font-size: 40px;
   font-weight: 500;
   color: var(--pri);
 }
-.main section.motivation-fullpage .motvation-fullpage-continer .motivation-container .motivation-wrapper .motivation-3 {
+.main section.motivation-fullpage .motivation-container .motivation-wrapper .motivation-3 {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   margin-top: 30px;
 }
-.main section.motivation-fullpage .motvation-fullpage-continer .motivation-container .motivation-wrapper .motivation-3 h2 {
+.main section.motivation-fullpage .motivation-container .motivation-wrapper .motivation-3 h2 {
   padding: 30px;
   border-radius: 20px;
   width: -moz-fit-content;
@@ -353,4 +348,44 @@ body {
   scale: 1.15;
   filter: blur(100px);
   z-index: 8;
+}
+.main section.pomodoro-fullpage {
+  padding: 30px 20px;
+  display: block;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-image: url(https://images.unsplash.com/photo-1613916107413-4991c04f0837?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+}
+.main section.pomodoro-fullpage h2 {
+  font-size: 60px;
+  font-family: aeonik2;
+  color: var(--pri);
+}
+.main section.pomodoro-fullpage .pomo-timer {
+  box-shadow: 16px 14px 14px 14px white;
+  width: 40%;
+  padding: 20px 30px;
+  background-color: #4d7995;
+  border-radius: 20px;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.main section.pomodoro-fullpage .pomo-timer h1 {
+  font-size: 140px;
+}
+.main section.pomodoro-fullpage .pomo-timer button {
+  width: 100px;
+  padding: 12px 2px;
+  border-radius: 5px;
+  border: none;
+  font-size: 20px;
+  color: #053657;
+  transition: all ease 0.8s;
+}
+.main section.pomodoro-fullpage .pomo-timer button:active {
+  scale: 0.95;
 }/*# sourceMappingURL=style.css.map */

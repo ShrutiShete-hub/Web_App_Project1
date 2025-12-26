@@ -317,19 +317,18 @@ body {
     }
 
     section.motivation-fullpage {
-        display: block;
+        
         position: relative;
-         .motvation-fullpage-continer{
-            height:100%;
-            width:100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+         
         .motivation-container {
             height: 400px;
             width: 80%;
-           position: relative;
- 
+            position: absolute;
+        
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
             .motivation-wrapper {
                 img{
                     position: absolute;
@@ -383,7 +382,6 @@ body {
                }
             }
         }
-    }
         .motivation-container::after{
             content: '';
             height: 100%;
@@ -396,6 +394,45 @@ body {
             z-index: 8; 
             
         }
-    
     }
+    section.pomodoro-fullpage{
+       h2{
+         font-size:60px ;
+         font-family: aeonik2;
+         color:var(--pri)
+       }
+       padding:30px 20px;
+        display: block;
+        position: relative;
+        background-position: center;
+        background-size: cover;
+        background-image:url( https://images.unsplash.com/photo-1613916107413-4991c04f0837?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) ;
+             .pomo-timer{
+                box-shadow:  16px 14px 14px 14px white;
+                width:40%;
+                padding:20px 30px;
+                background-color: #4d7995;
+                border-radius: 20px;
+                position:absolute;
+                top:45%;
+                left:50%;
+                transform: translate(-50% , -50%);
+                text-align: center;
+                h1{
+                    font-size: 140px;
+                }
+                button{
+                    width:100px;
+                    padding:12px 2px;
+                    border-radius: 5px;
+                    border: none;
+                    font-size: 20px;
+                    color: #053657;
+                    transition: all ease .8s;
+                }
+                button:active{
+                    scale:0.95;
+                }
+             }
+  }
 }

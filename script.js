@@ -138,4 +138,42 @@ motivationAuthor.innerHTML=data.author;
 fetchQuote();
 
 }
-motivationQuote()
+motivationQuote();
+
+let timerinterval=null;
+let totalSeconds=1490;
+let timer=document.querySelector(".pomo-timer h1");
+let start =document.querySelector(".pomo-timer .start-timer ")
+let pause =document.querySelector(".pomo-timer .pause-timer ")
+let reset =document.querySelector(".pomo-timer .reset-timer ")
+function upDateTime(){
+  let minutes=Math.floor(totalSeconds/60);
+  let seconds=totalSeconds%60;
+  timer.innerHTML=`${String(minutes).padStart(2,"0")}:${String(seconds).padStart(2,"0")}`;
+}
+function startTimer(){
+  clearInterval(timerinterval);
+ 
+  timerinterval=setInterval(()=>{
+     if(totalSeconds>0){
+     totalSeconds--;
+     upDateTime();
+     }else{
+  clearInterval(timerinterval);
+}
+  },10);
+
+}
+function pauseTimer(){
+  clearInterval(timerinterval);
+}
+function resetTimer(){
+   totalSeconds=25*60;
+  clearInterval(timerinterval);
+ 
+  upDateTime();
+}
+start.addEventListener("click",startTimer);
+pause.addEventListener("click",pauseTimer);
+reset.addEventListener("click", resetTimer)
+
