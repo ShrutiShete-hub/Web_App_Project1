@@ -1,8 +1,12 @@
 :root {
     --pri: #E3E3E3;
-    --sec: #1B3C53;
-    --tri1: #234C6A;
+    --lig:#4d7995;
     --tri2: #456882;
+    --tri1: #234C6A;
+    --sec: #1B3C53;
+   --lig2:#053657;
+    --red:#aa0404;
+    --black:black;;
 }
 
 @font-face {
@@ -36,6 +40,7 @@ html,
 body {
     height: 100%;
     width: 100%;
+    overflow: hidden;
 }
 
 .elem:active {
@@ -46,8 +51,35 @@ body {
     font-family: aeonik;
     height: 100%;
     width: 100%;
+    padding-top: 12px;
+    
+     
     background-image:conic-gradient(var(--pri), var(--tri2),var(--sec),var(--pri));
-
+     nav{
+        display: flex;
+        padding:30px;
+        width:100%;
+        height: 50px;
+        border-radius: 20px;
+        background-color: var(--lig);
+        justify-content: space-between;
+        align-items: center;
+      
+        
+        button{
+            background-color: var(--pri);
+            border:none;
+            color:var(--sec);
+            font-weight: 500;
+            font-family: aeonik2;
+            border-radius: 9px;
+            padding:5px 7px;
+            transition: all ease 1s;
+        }
+        button:active{
+            scale:0.8;
+        }
+     }
    
 
     section.allElems {
@@ -57,6 +89,7 @@ body {
         position: absolute;
         overflow: auto;
         header{
+            margin-top: -10px;
             background-position: center;
             background-size: cover;
             background-image: url(https://images.unsplash.com/photo-1514519273132-6a1abd48302c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fHNreXxlbnwwfHwwfHx8MA%3D%3D);
@@ -64,7 +97,7 @@ body {
             align-items: center;
             justify-content: space-between;
             width:100%;
-            height:400px;
+            height:350px;
             border-radius: 20px;
             background-color: #37c9df;
             margin-bottom: 30px;
@@ -144,7 +177,7 @@ body {
             padding: 10px 11px;
             border: none;
             position: absolute;
-            background: #aa0404;
+            background: var(--red);
             color: var(--pri);
             border-radius: 50%;
             font-size: 30px;
@@ -179,7 +212,7 @@ body {
                 border-radius: 10px;
                 width: 30%;
                 height: 100%;
-                background-color: #4d7995;
+                background-color: var(--lig);
 
                 form {
                     display: flex;
@@ -187,24 +220,24 @@ body {
                     padding: 20px;
 
                     #task-inp {
-                        color: black;
+                        color: var(--black);
                         width: 100%;
                         font-size: 20px;
                         border-radius: 5px;
                         border: none;
                         padding: 10px 12px;
-                        background-color: #E3E3E3;
+                        background-color: var(--pri);
                         margin-bottom: 20px;
                     }
 
                     textarea {
-                        color: black;
+                        color: var(--black);
                         width: 100%;
                         font-size: 20px;
                         border-radius: 5px;
                         border: none;
                         padding: 10px 12px;
-                        background-color: #E3E3E3;
+                        background-color:var(--pri);
                         margin-bottom: 20px;
                     }
 
@@ -214,7 +247,7 @@ body {
                         border-radius: 5px;
                         border: none;
                         padding: 10px 12px;
-                        background-color: #053657;
+                        background-color: var(--lig2);
                         margin-bottom: 20px;
                         font-weight: 500;
                         transition: all ease .8s;
@@ -250,7 +283,7 @@ body {
             border-radius: 10px;
             width: 65%;
             height: 100%;
-            background-color: #4d7995;
+            background-color:var(--lig);
 
             .diff-tasks {
                 background-color: var(--pri);
@@ -263,7 +296,7 @@ body {
                 font-family: aeonik1;
 
                 h3 {
-                    color: #053657;
+                    color: var(--lig2);
                     font-weight: 600;
                     display: flex;
                     align-items: center;
@@ -272,7 +305,7 @@ body {
 
                     span {
                         background-color: rgb(211, 5, 5);
-                        color: #E3E3E3;
+                        color: var(--pri);
                         font-size: 10px;
                         padding: 3px;
                         border-radius: 50px;
@@ -289,7 +322,7 @@ body {
 
                 button {
                     font-size: 15px;
-                    background-color: #053657;
+                    background-color: var(--lig2);
                     border: none;
                     padding: 7px 15px;
                     border-radius: 3px;
@@ -328,14 +361,14 @@ body {
                 position: relative;
                 display: flex;
                 align-items: center;
-                background-color: #456882;
+                background-color: var(--lig);
                 width: 49%;
                 margin-bottom: 15px;
 
                 p {
                     font-size: 20px;
                     font-family: aeonik1;
-                    color: #053657;
+                    color: var(--lig2);
                     position: absolute;
                     top: 5%;
                     left: 1%;
@@ -344,7 +377,7 @@ body {
                 input {
                     width: 100%;
                     background-color: var(--pri);
-                    color: #053657;
+                    color:var(--lig2);
                     font-size: 20px;
                     padding: 20px 40px;
                     border: none;
@@ -392,7 +425,7 @@ body {
                     width: fit-content;
                     padding: 30px;
                     border-radius: 20px;
-                    background-color: #1B3C53;
+                    background-color:var(--sec);
 
                     h2 {
                         font-family: aeonik2;
@@ -423,7 +456,7 @@ body {
                         padding: 30px;
                         border-radius: 20px;
                         width: fit-content;
-                        background-color: #1B3C53;
+                        background-color: var(--sec);
                         font-size: 30px;
                         font-weight: 500;
                         text-align: right;
@@ -464,7 +497,7 @@ body {
             border-radius: 5px;
             padding: 12px 22px;
             background-color: var(--pri);
-            color: #456882;
+            color:var(--tri2);
             box-shadow: 16px 14px 14px 14px white;
 
         }
@@ -498,7 +531,7 @@ body {
                 border-radius: 5px;
                 border: none;
                 font-size: 20px;
-                color: #053657;
+                color: var(--lig2);
                 transition: all ease .8s;
             }
 

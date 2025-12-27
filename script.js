@@ -205,7 +205,8 @@ reset.addEventListener("click", resetTimer)
 }
 pomodotimer();
 
-let apikey="b482114c69be47dcb17113341252712";
+function wheatherFunctionality(){
+  let apikey="b482114c69be47dcb17113341252712";
 let city='Bhopal'
 var data=null;
 let header1Time =document.querySelector(".header1 h1");
@@ -250,4 +251,45 @@ function timeDate(){
 setInterval(()=>{
   timeDate();
 },1000);
+}
+wheatherFunctionality();
+// --pri: #E3E3E3;
+//     --lig:#4d7995;
+//     --tri2: #456882;
+//     --tri1: #234C6A;
+//     --sec: #1B3C53;
+//    --lig2:#053657;
+
+var rootElement=document.documentElement;
+ let theme=document.querySelector("button");
+ var flag=0;
+ theme.addEventListener("click",function(){
+  console.log("hello")
+  if(flag==0){
+    rootElement.style.setProperty('--pri','#FEEAC9');
+    rootElement.style.setProperty('--lig','#FFCDC9');
+    rootElement.style.setProperty('--tri2','#FDACAC');
+    rootElement.style.setProperty('--tri1','#FD7979');
+    rootElement.style.setProperty('--sec','#BF124D');
+    rootElement.style.setProperty('--lig2','#76153C');
+    flag=1;
+  }
+  else if(flag==1){
+     rootElement.style.setProperty('--pri','#FCF8DD');
+    rootElement.style.setProperty('--lig','#FFD700');
+    rootElement.style.setProperty('--tri2','#D3AF37');
+    rootElement.style.setProperty('--tri1','#EB5B00');
+    rootElement.style.setProperty('--sec','#B12C00');
+    rootElement.style.setProperty('--lig2','#00809D');
+    flag=2;
+  }else if(flag==2){
+    rootElement.style.setProperty('--pri','#E3E3E3');
+    rootElement.style.setProperty('--lig','#4d7995');
+    rootElement.style.setProperty('--tri2','#456882');
+    rootElement.style.setProperty('--tri1','#234C6A');
+    rootElement.style.setProperty('--sec','#1B3C53');
+    rootElement.style.setProperty('--lig2','#053657');
+    flag=0;
+  }
+})
 
