@@ -41,20 +41,54 @@ body {
   font-family: aeonik;
   height: 100%;
   width: 100%;
-  background-color: var(--sec);
-}
-.main nav {
-  position: fixed;
-  width: 100%;
-  height: 60px;
-  background-color: var(--tri2);
+  background-image: conic-gradient(var(--pri), var(--tri2), var(--sec), var(--pri));
 }
 .main section.allElems {
   height: 100%;
   width: 100%;
   padding: 40px;
   position: absolute;
-  padding-top: 80px;
+  overflow: auto;
+}
+.main section.allElems header {
+  background-position: center;
+  background-size: cover;
+  background-image: url(https://images.unsplash.com/photo-1514519273132-6a1abd48302c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fHNreXxlbnwwfHwwfHx8MA%3D%3D);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 400px;
+  border-radius: 20px;
+  background-color: #37c9df;
+  margin-bottom: 30px;
+  padding: 60px;
+}
+.main section.allElems header .header1 h1 {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 70px;
+}
+.main section.allElems header .header1 h4 {
+  margin-top: -10px;
+  font-weight: 500;
+  font-size: 60px;
+}
+.main section.allElems header .header2 h2 {
+  font-weight: 500;
+  font-size: 40px;
+}
+.main section.allElems header .header2 h3 {
+  font-weight: 700;
+  font-size: 20px;
+  opacity: 0.8;
+}
+.main section.allElems header .header2 h4 {
+  font-weight: 500;
+  margin-bottom: 40px;
+  font-size: 50px;
+}
+.main section.allElems .allFeatures {
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
@@ -64,6 +98,7 @@ body {
   background-color: var(--tri1);
   height: 300px;
   width: 250px;
+  box-shadow: 13px -4px 15px #01060a;
   border-radius: 10px;
   position: relative;
   overflow: hidden;
@@ -351,7 +386,6 @@ body {
 }
 .main section.pomodoro-fullpage {
   padding: 30px 20px;
-  display: block;
   position: relative;
   background-position: center;
   background-size: cover;
@@ -361,6 +395,20 @@ body {
   font-size: 60px;
   font-family: aeonik2;
   color: var(--pri);
+}
+.main section.pomodoro-fullpage .session {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-family: aeonik2;
+  font-size: 30px;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 12px 22px;
+  background-color: var(--pri);
+  color: #456882;
+  box-shadow: 16px 14px 14px 14px white;
 }
 .main section.pomodoro-fullpage .pomo-timer {
   box-shadow: 16px 14px 14px 14px white;

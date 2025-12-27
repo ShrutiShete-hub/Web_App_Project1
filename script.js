@@ -140,8 +140,11 @@ fetchQuote();
 }
 motivationQuote();
 
+function pomodotimer(){
+var isWorkSession=true;
 let timerinterval=null;
 let totalSeconds=1490;
+let session=document.querySelector(".pomodoro-fullpage .session");
 let timer=document.querySelector(".pomo-timer h1");
 let start =document.querySelector(".pomo-timer .start-timer ")
 let pause =document.querySelector(".pomo-timer .pause-timer ")
@@ -153,16 +156,38 @@ function upDateTime(){
 }
 function startTimer(){
   clearInterval(timerinterval);
- 
+ if(isWorkSession){
+  session.innerHTML="Work Session";
+ session.style.backgroundColor='#E3E3E3';
+  session.style.color='#456882'
+  totalSeconds=25*60;
   timerinterval=setInterval(()=>{
      if(totalSeconds>0){
      totalSeconds--;
      upDateTime();
      }else{
+      isWorkSession=false;
   clearInterval(timerinterval);
+  timer.innerHTML='05:00'
 }
-  },10);
-
+  },1000);
+ }
+ else{
+  totalSeconds=5*60;
+  session.innerHTML="Break Time"
+  session.style.backgroundColor='red'
+  session.style.color='white'
+  timerinterval=setInterval(()=>{
+     if(totalSeconds>0){
+     totalSeconds--;
+     upDateTime();
+     }else{
+      isWorkSession=true
+  clearInterval(timerinterval);
+  timer.innerHTML='25:00'
+}
+  },1000);
+ }
 }
 function pauseTimer(){
   clearInterval(timerinterval);
@@ -176,4 +201,53 @@ function resetTimer(){
 start.addEventListener("click",startTimer);
 pause.addEventListener("click",pauseTimer);
 reset.addEventListener("click", resetTimer)
+
+}
+pomodotimer();
+
+let apikey="b482114c69be47dcb17113341252712";
+let city='Bhopal'
+var data=null;
+let header1Time =document.querySelector(".header1 h1");
+let header1Date=document.querySelector(".header1 h2");
+let header2Temp=document.querySelector(".header2 h2");
+let header2Condition=document.querySelector(".header2 h4");
+let humidity=document.querySelector('.header2 .Humidity');
+let preciption=document.querySelector('.header2 .Precipitation');
+let wind=document.querySelector('.header2 .Wind');
+
+async function weatherApiCall(){
+  var response= await fetch(`https://api.weatherapi.com/v1/current.json?key=${apikey}&q=${city}`)
+   data=await response.json(); 
+   header2Temp.innerHTML=`${data.current.temp_c}°C`
+  //  console.log(data.current.condition.text);
+    header2Condition.innerHTML=`${data.current.condition.text}`
+    wind.innerHTML=`Wind: ${data.current.wind_kph}km/h`;
+    humidity.innerHTML=`Humidity: ${data.current.humidity}%`
+    preciption.innerHTML=`Heat Index:${data.current.heatindex_c}%`
+}
+weatherApiCall();
+
+function timeDate(){
+  const totaldaysOfWeek=['Sunday','Monday','Tuesday','Weadnesday','Thursday','Friday','Saturday']
+   const totalMonthYear= ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  var date=new Date();
+   var hours=date.getHours();
+   var minutes= date.getMinutes();
+   var seconds=date.getSeconds()
+   var sdate=date.getDate();
+   var month=totalMonthYear[date.getMonth()];
+   var year=date.getFullYear();
+   var dayOfWeek= totaldaysOfWeek[date.getDay()]
+
+   header1Date.innerHTML=`${sdate} ${month} ${year}`
+   if(hours>12){
+    header1Time.innerHTML=`${dayOfWeek}, ${hours-12}:${minutes}:${String(seconds).padStart("2","0")}pm`}
+    else{
+       header1Time.innerHTML=`${dayOfWeek}, ${hours}:${minutes}:${String(seconds).padStart("2","0")}am`
+    }
+}
+setInterval(()=>{
+  timeDate();
+},1000);
 
